@@ -14,4 +14,5 @@
 | [ex4.html](https://github.com/riafaya/1rep/blob/master/ex4.html)     | Sarcina: Utilizarea listelor **ordonate**       |
 | [ex5.html](https://github.com/riafaya/1rep/blob/master/ex5.html)     | Sarcina: Utilizarea listelor **de definiții** |
 | [ex6.html](https://github.com/riafaya/1rep/blob/master/ex6.html)     | Sarcina: Utilizarea elementelor pentru **"Header,Index,NavBar,Content,Footer"**                                    |
-
+| [ex7.html](https://github.com/riafaya/1rep/blob/master/ex7.html)     | Sarcina: Utilizarea  **tabelelor** |
+| [ex8.html](https://github.com/riafaya/1rep/blob/master/ex8.html)     | Sarcina: Utilizarea  **forms** |
