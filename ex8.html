@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Forms</title>
+    </head>
+    <style>
+       body{
+        font-family: 'Times New Roman', Times, serif;
+       }
+       form {
+        max-width: 800px;
+        margin: 20 px auto;
+        padding: 20px;
+        background-color: darkkhaki;
+        border: 1px solid #b4b4b4;
+        border-radius: 5px;
+       }
+       
+
+       form div{
+        margin-bottom: 10px;
+       }
+       fieldset{
+        margin: 0;
+        padding: 10px;
+        border: 5px solid #143a81;
+       }
+
+       legend {
+        font-weight: bold;
+        color:rgb(92, 55, 55)
+       }
+
+       h5{
+        font-family: Arial, Helvetica, sans-serif;
+        color: rgb(48, 35, 30);
+       }
+       select {
+            width: 130px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #fff;
+       }
+
+
+    </style>
+    <body>
+        <form action="#" method="post"  enctype="multipart/form-data" onsubmit="return validateForm()">
+                    <label for="sname">First Name:</label>
+                    <input type="text" id="sname" placeholder="Enter your Name"></div>
+                
+               <div>     <label for="name">Last Name:</label>
+                    <input type="text" id="name" placeholder="Enter your Last Name"></div>
+
+                    <div><label for="date">Birth Day:</label>
+                    <input type="date" id="date" placeholder="Enter your BithDay"></div>
+                    
+                   <div> <label for="mail">Email:</label>
+                    <input type="email" id="male" placeholder="Enter your Email" required></div>
+
+                 <div>  <label for="password">Password:</label>
+                    <input type="password" id="password" placeholder="Enter your Password (min.8 characters)" minlength="8"required></div>
+                 <div> <label for="password1">Password</label>
+                    <input type="password" id="password1" placeholder="Enter Your Password" readonly></div>
+
+                 <div>   <label for="image">Upload Image</label>
+                    <input type="file" name="file" id="image" accept="image/*" multiple></div>
+               
+               <div>
+                <fieldset>
+                    <legend>Choose your true</legend>
+                    <div>
+                        <h5>Type of films:</h5>
+                        <input type="checkbox" id="option1" name="option1" value="KDrama">
+                        <label for="option1">KDrama</label>
+                        
+                        <input type="checkbox" id="option2" name="option2" value="Turkish">
+                        <label for="option2">Turkish</label>
+
+                        <input type="checkbox" id="option3" name="option3" value="American">
+                        <label for="option3">American</label>
+                    </div>
+                    <div>
+                        <h5>Gender:</h5>
+                        <input type="radio" id="gender" name="gender" value="gender" >
+                        <label for="gender">Female</label>
+                        <input type="radio" id="gender1" name="gender" value="gender1" >
+                        <label for="gender1">Male</label>
+                        <input type="radio" id="gender2" name="gender" value="gender2" >
+                        <label for="gender2">I dont`t specify</label>
+                    </div>
+
+                    <div>
+                        <h5>Your Class:</h5>
+                        <select>
+                            <option value=""></option>
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                            <option value="VI">VI</option>
+                            <option value="VII">VII</option>
+                            <option value="VIII">VIII</option>
+                            <option value="IX">IX</option>
+                            <option value="X">X</option>
+                            <option value="XI">XI</option>
+                            <option value="XII">XII</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <div>
+                    <h4>Additional Info;</h4>
+                    <textarea>
+                        Describe Yourself:
+                    </textarea>
+                   </div>
+
+                   <div class="button-group">
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </div>
+                   
+               </div>
+
+               
+
+        </form>
+    </body>
+</html>
