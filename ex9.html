@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title >AirDaises-Flight Schedule</title>
+        <style>
+            /*Selector Univerasal*/
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            /*Selector Element*/
+
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                background-color: bisque;
+                padding: 20px;
+            }
+
+            /*Selector Class*/
+
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                background-color: #f5f3f3;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) ;
+            }
+
+            /*Selector ID*/
+
+            #flight-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            /*Selector Descendent*/
+
+            th,td {
+                padding: 10px;
+                border: 1px solid #cac8c8;
+            }
+
+            /*Selector Adiacent*/
+
+            th {
+                background-color: #d4cfcf;
+                font-weight: bold;
+            }
+
+            /*Selector copil*/
+
+            tr:first-child {
+                background-color: #d6d2d2;
+            }
+
+            /*Selector Attribute*/
+
+            tr[data-type="domestic" ] {
+                background-color: #ffe4e0;
+            }
+
+            /* Selector Pseudo-Class*/
+
+            tr:hover {
+                background-color: #eee7e7;
+
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="container">
+            <h1>Flight Schedule</h1>
+            <table id="flight-table">
+                <thead>
+                    <tr>
+                        <th>Flight Number</th>
+                        <th>Departures</th>
+                        <th>Destination</th>
+                        <th>Departure Time</th>
+                        <th>Arrival Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>H2V45</td>
+                        <td>Chisinau</td>
+                        <td>Dublin</td>
+                        <td>20:15</td>
+                        <td>22:55</td>
+                        <td>On Time</td>
+                    </tr>
+                    <tr data-type="domestic">
+                        <td>F7D34</td>
+                        <td>Erevan</td>
+                        <td>Helisinki</td>
+                        <td>10:35</td>
+                        <td>14:25</td>
+                        <td>Delayed</td>
+                    </tr>
+                    <tr>
+                        <td>R8I87</td>
+                        <td>Dusseldorf</td>
+                        <td>Bruxell</td>
+                        <td>17:30</td>
+                        <td>19:25</td>
+                        <td>On Time</td>
+                    </tr>
+                    <tr data-type="domestic">
+                        <td>H3Y65</td>
+                        <td>New York</td>
+                        <td>Bucuresti</td>
+                        <td>12:10</td>
+                        <td>22:55</td>
+                        <td>On approach</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>

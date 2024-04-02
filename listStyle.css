@@ -1,0 +1,36 @@
+/*Stilizare pentru lista exterioara*/
+
+.outer-list {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #353333;
+    background-color: #f7f0f0;
+    border: 2px solid #c0bfbf;
+    padding: 10px;
+    text-align: center;
+}
+
+/*Stilizare pentru lista interioara*/
+
+.inner-list {
+   font-size: 14px;
+   background-color: #dbdbdb; 
+   border: 1px solid #8b8b8b;
+   padding: 5px;
+   text-align: left;
+}
+
+/*Stilizare pentru lista items*/
+
+.outer-list li, .inner-list li {
+    list-style-type: none;
+    margin: 5px 0;
+}
+
+/*Stilizare pentru headinguri*/
+
+h1 {
+    text-align: center;
+    color: rgb(2, 117, 155);
+}
+
