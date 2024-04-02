@@ -16,3 +16,6 @@
 | [ex6.html](https://github.com/riafaya/1rep/blob/master/ex6.html)     | Sarcina: Utilizarea elementelor pentru **"Header,Index,NavBar,Content,Footer"**                                    |
 | [ex7.html](https://github.com/riafaya/1rep/blob/master/ex7.html)     | Sarcina: Utilizarea  **tabelelor** |
 | [ex8.html](https://github.com/riafaya/1rep/blob/master/ex8.html)     | Sarcina: Utilizarea  **forms** |
+| [ex9.html](https://github.com/riafaya/1rep/blob/master/ex9.html)     | Sarcina: Utilizarea selecturilor de **stilizarea folosind html**  |
+| [ex10.html](https://github.com/riafaya/1rep/blob/master/ex10.html)     | Sarcina: Utilizarea stilizarii in  **CCS** |
+| [listStyle.ccs](https://github.com/riafaya/1rep/blob/master/listStyle.css)     | Sarcina: Utilizarea  **stilizarilor prin css** |
