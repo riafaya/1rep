@@ -19,3 +19,5 @@
 | [ex9.html](https://github.com/riafaya/1rep/blob/master/ex9.html)     | Sarcina: Utilizarea selecturilor de **stilizarea folosind html**  |
 | [ex10.html](https://github.com/riafaya/1rep/blob/master/ex10.html)     | Sarcina: Utilizarea stilizarii in  **CCS** |
 | [listStyle.ccs](https://github.com/riafaya/1rep/blob/master/listStyle.css)     | Sarcina: Utilizarea  **stilizarilor prin css** |
+| [ex11.html](https://github.com/riafaya/1rep/blob/master/exTask/ex11.html)     | Sarcina: Utilizarea  **listelor cu iconita** |
+| [ex12.html](https://github.com/riafaya/1rep/blob/master/exTask/ex12.html)     | Sarcina: Utilizarea formelor unde la fiecare input  **este folosita anumita stilizare** |
