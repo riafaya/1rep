@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>School Form</title>
+<style>
+ h1{
+    text-align: center;
+    color: rgb(126, 123, 123);
+    background-color:rgb(152, 199, 201);
+    padding: 10px 20px;
+    border: 2px solid rgb(203, 189, 189) ;
+    border-radius: 10px;
+ }
+ 
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="url"],
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #aba7a7;
+        border-radius: 7px;
+        transition: border-color 0.7s, background-color 0.7s;
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus,
+    select:focus {
+        border-color: rgb(180, 65, 65);
+    }
+    
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    input[type="url"]:focus {
+        background-color: rgb(226, 154, 166);
+    }
+    
+    input:disabled,
+    select:disabled {
+        background-color: rgb(104, 103, 103);
+    }
+    select:checked, label {
+        background-color: rgb(232, 232, 109);
+    }
+
+</style>
+</head>
+<body>
+<h1>Complete your Form to participate at conference</h1>
+<form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Enter your Name">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Enter your Email">
+
+    <label for="url">URL:</label>
+    <input type="url" id="url" name="url" disabled>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" pattern=".{8,}" 
+    title="Password must be at least 8 characters long" required placeholder="Enter your Password">
+
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender">
+        <option value="">Select</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+    </select>
+</form>
+
+</body>
+</html>

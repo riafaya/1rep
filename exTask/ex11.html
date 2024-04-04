@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Pop</title>
+<style>
+
+/*Stilizare h1*/
+
+h1 {
+    text-align: center;
+    color: rgba(73, 3, 120, 0.388);
+    background-color:  #d67088;
+    padding: 10px 20px;
+    border: 2px solid rgba(73, 3, 120, 0.388) ;
+    border-radius: 10px;
+}
+
+/*Stilizarea pseudo-element*/
+
+ol {
+    list-style-type: none;
+    counter-reset: kpop-counter;
+    padding-left: 0;
+}
+
+ol li {
+    counter-increment: kpop-counter;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+ol li::before {
+    content: counter(kpop-counter);
+    position: absolute;
+    left: -50px;
+    font-weight: bold;
+    color: #393636; 
+  }
+
+  ol li::after {
+    content: "";
+    display: block;
+    width: 40px; 
+    height: 40px;
+    margin-left: 10px; 
+    background-size: cover;
+    position: absolute;
+    left: 0;
+  }
+
+
+ol li:nth-child(1)::after {
+    background-image: url(2048x2048_0xIERR1fhN_7413448315464806659.jpg);
+}
+
+
+ol li:nth-child(2)::after {
+    background-image: url(ab6761610000e5ebc9690bc711d04b3d4fd4b87c.jpg);
+}
+
+
+ol li:nth-child(3)::after {
+    background-image: url(TXT_at_Dior_Sauvage_campaign_event_\(3\).jpg);
+}
+
+
+ol li:nth-child(4)::after {
+    background-image: url(images.jpg);
+}
+
+</style> 
+</head>
+<body>
+  <h1>Top K-Pop Group</h1>  
+
+  <ol>
+    <li>BTS</li>
+    <li>BlackPink</li>
+    <li>Enhypen</li>
+    <li>TXT</li>
+  </ol>
+</body>
+</html>
