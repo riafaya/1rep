@@ -54,6 +54,27 @@
         background-color: rgb(232, 232, 109);
     }
 
+    input[type="radio"] {
+        display: none; 
+    }
+
+    label.gender-label {
+        display: inline-block;
+        width: auto;
+        margin-bottom: 10x;
+        cursor: pointer;
+        text-align: center;
+        padding: 8px;
+        border: 1px solid #bbbaba;
+        border-radius: 7px;
+        background-color: #fcf6f6;
+        transition: background-color 0.3s;
+    }
+
+    
+    input[type="radio"]:checked + label.gender-label {
+        background-color: yellow;
+    }
 </style>
 </head>
 <body>
@@ -73,11 +94,13 @@
     title="Password must be at least 8 characters long" required placeholder="Enter your Password">
 
     <label for="gender">Gender:</label>
-    <select id="gender" name="gender">
-        <option value="">Select</option>
-        <option value="male">Male</option>
-        <option value="female">Female</option>
-        <option value="other">Other</option>
+    <input type="radio" id="male" name="gender" value="male">
+    <label class="gender-label" for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label class="gender-label" for="female">Female</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label class="gender-label" for="other">Other</label>
+</form>
     </select>
 </form>
 
