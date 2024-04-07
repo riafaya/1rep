@@ -21,3 +21,5 @@
 | [listStyle.ccs](https://github.com/riafaya/1rep/blob/master/listStyle.css)     | Sarcina: Utilizarea  **stilizarilor prin css** |
 | [ex11.html](https://github.com/riafaya/1rep/blob/master/exTask/ex11.html)     | Sarcina: Utilizarea  **listelor cu iconita** |
 | [ex12.html](https://github.com/riafaya/1rep/blob/master/exTask/ex12.html)     | Sarcina: Utilizarea formelor unde la fiecare input  **este folosita anumita stilizare** |
+| [ex13.html](https://github.com/riafaya/1rep/blob/master/exTask2/ex13.html)     | Sarcina: Utilizarea stilizari pentru a oferi culoare **fiecarei celule prin clase** |
+| [ex13V2.html](https://github.com/riafaya/1rep/blob/master/exTask2/ex13V2.html)     | Sarcina: Utilizarea stilizari pentru a oferi culoare **fiecarei celule folosind pseudo-clasa nth-child**  |
