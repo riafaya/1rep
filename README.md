@@ -23,3 +23,5 @@
 | [ex12.html](https://github.com/riafaya/1rep/blob/master/exTask/ex12.html)     | Sarcina: Utilizarea formelor unde la fiecare input  **este folosita anumita stilizare** |
 | [ex13.html](https://github.com/riafaya/1rep/blob/master/exTask2/ex13.html)     | Sarcina: Utilizarea stilizari pentru a oferi culoare **fiecarei celule prin clase** |
 | [ex13V2.html](https://github.com/riafaya/1rep/blob/master/exTask2/ex13V2.html)     | Sarcina: Utilizarea stilizari pentru a oferi culoare **fiecarei celule folosind pseudo-clasa nth-child**  |
+| [boxModel.html](https://github.com/riafaya/1rep/blob/master/exTask3/boxModel.html)     | Sarcina: Utilizarea stilizari pentru a crea **un box cu anumiti parametri specificati**  |
+| [imageBox.html](https://github.com/riafaya/1rep/blob/master/exTask3/imaxeBox.html)     | Sarcina: Utilizarea stilizari a unui **fișier care să conțină cel puțin trei imagini, aplicând chenare și culori de fundal pentru un aspect personalizat.** | 
