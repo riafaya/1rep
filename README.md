@@ -26,4 +26,8 @@
 | [boxModel.html](https://github.com/riafaya/1rep/blob/master/exTask3/boxModel.html)     | Sarcina: Utilizarea stilizari pentru a crea **un box cu anumiti parametri specificati**  |
 | [imageBox.html](https://github.com/riafaya/1rep/blob/master/exTask3/imaxeBox.html)     | Sarcina: Utilizarea stilizari a unui **fișier care să conțină cel puțin trei imagini, aplicând chenare și culori de fundal pentru un aspect personalizat.** | 
 | [example.html](https://github.com/riafaya/1rep/blob/master/example.html)     | Sarcina: Utilizarea stilizari **textului pentru 9 boxe/tabele diferite** | 
+| [positionStyle.css](https://github.com/riafaya/1rep/blob/master/exTask4/position.html)   | Sarcina: Utilizarea  patru div-uri **poziționate absolut**|
+| [position.html](https://github.com/riafaya/1rep/blob/master/exTask4/position.html)   | Sarcina: Utilizarea stilizarea patru div-uri **poziționate absolut**|
+| [styleWeb.css](https://github.com/riafaya/1rep/blob/master/exTask4/styleWeb.css)   | Sarcina: Utilizarea  **pentru pagina web** | 
+| [aviaSite.html](https://github.com/riafaya/1rep/blob/master/exTask4/aviaSite.html)   | Sarcina: Utilizarea header,top menu, footer, logo **pozitionata relative/absolute** | 
 
