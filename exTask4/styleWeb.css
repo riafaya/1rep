@@ -107,8 +107,7 @@ section {
 .comandaForm input[type="submit"] {
     background-color: #2e7793;
     color: beige;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+ 
 }
 
 .comandaForm input[type="submit"]:hover {
