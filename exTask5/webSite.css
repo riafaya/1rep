@@ -1,0 +1,150 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('pexels-photo-1456291.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+header{
+    background-color: #2e7793;
+    color: rgb(235, 241, 247);
+    text-align:center ;
+    padding: 20px;
+}
+
+footer{
+    background-color: #2e7793;
+    color:rgb(235, 241, 247) ;
+    text-align: center;
+    padding: 20px;
+    clear: both;
+}
+
+nav{
+    background-color: #575757;
+    text-align: center;
+    padding: 10px;
+}
+
+nav a{
+    padding: 20px;
+    margin: 30px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+.logo{
+    max-width: 50px;
+    height: auto;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.top-menu{
+    background-color: #7ee5c1;
+    text-align: center;
+    padding: 10px;
+}
+
+.top-menu a{
+    padding: 10px;
+    margin: 0 10px;
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#content{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+.bloc-comanda{
+    background-color: #40a0c4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    width: 70%;
+    margin: auto;
+}
+
+.comanda-form {
+    background-color: #5ed5ed;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px, 0px, 10px rgba(51, 122, 140, 0.1);
+    width: 300px;
+}
+
+.comandaForm {
+    text-align: left;
+}
+
+.comanda-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.comandaForm label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.comandaForm input[type="text"],
+.comandaForm input[type="tel"],
+.comandaForm input[type="email"],
+.comandaForm input[type="date"],
+.comandaForm input[type="submit"]{
+
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #a19696;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+.comandaForm input[type="submit"]:hoover {
+    background-color: #1c5065;
+}
+
+.sidebar{
+background-color: #f0f0f0;
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0px, 0px, 10px rgba(0, 0, 0, 0.1);
+width: 30%;
+}
+
+.departure-table{
+    display: table;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.departure-table-row{
+    display: table-row;
+}
+
+.departure-table-header,
+.departure-table-data{
+    display: table-cell;
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.departure-table-header{
+    background-color: #2e7793;
+    color: white;
+    font-weight: bold;
+}
+
+
