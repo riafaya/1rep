@@ -30,4 +30,6 @@
 | [position.html](https://github.com/riafaya/1rep/blob/master/exTask4/position.html)   | Sarcina: Utilizarea stilizarea patru div-uri **poziționate absolut**|
 | [styleWeb.css](https://github.com/riafaya/1rep/blob/master/exTask4/styleWeb.css)   | Sarcina: Utilizarea  **pentru pagina web** | 
 | [aviaSite.html](https://github.com/riafaya/1rep/blob/master/exTask4/aviaSite.html)   | Sarcina: Utilizarea header,top menu, footer, logo **pozitionata relative/absolute** | 
+| [webSite.css](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.css)   | Sarcina: Utilizarea  stilizari **pentru pagina web** | 
+| [webSite.html](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.html)   | Sarcina: Utilizarea  **display** | 
 
