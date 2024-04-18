@@ -32,4 +32,6 @@
 | [aviaSite.html](https://github.com/riafaya/1rep/blob/master/exTask4/aviaSite.html)   | Sarcina: Utilizarea header,top menu, footer, logo **pozitionata relative/absolute** | 
 | [webSite.css](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.css)   | Sarcina: Utilizarea  stilizari **pentru pagina web** | 
 | [webSite.html](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.html)   | Sarcina: Utilizarea  **display** | 
+| [flexBox.css](https://github.com/riafaya/1rep/blob/task6/exTask6/flexBox.css)   | Sarcina: Utilizarea  stilizari boxelor **display-flex** | 
+| [flexBox.html](https://github.com/riafaya/1rep/blob/task6/exTask6/flexBox.html)   | Sarcina: Utilizarea  **display-flex** | 
 
