@@ -33,5 +33,16 @@
 | [webSite.css](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.css)   | Sarcina: Utilizarea  stilizari **pentru pagina web** | 
 | [webSite.html](https://github.com/riafaya/1rep/blob/master/exTask5/webSite.html)   | Sarcina: Utilizarea  **display** | 
 | [flexBox.css](https://github.com/riafaya/1rep/blob/task6/exTask6/flexBox.css)   | Sarcina: Utilizarea  stilizari boxelor **display-flex** | 
-| [flexBox.html](https://github.com/riafaya/1rep/blob/task6/exTask6/flexBox.html)   | Sarcina: Utilizarea  **display flex** | 
+|                                                                                 |                                            |
+| [flexoxhtml](https://github.com/riafaya/1rep/blob/task6/exTask6/flexBox.html)   | Sarcina: Utilizarea  **display flex** | 
+| [firstBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/firstBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [secondBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/secondBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [thirdBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/thirdBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [fourthBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/fourthBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [fifthBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/fifthBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [sixthBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/sixthBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [seventhBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/seventhBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [eightBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/eighthBox.html)   | Sarcina: Utilizarea  **display grid** | 
+| [ninthBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/ninthBox.html)   | Sarcina: Utilizarea  **display grid** | 
+
 
