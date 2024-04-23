@@ -44,5 +44,5 @@
 | [seventhBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/seventhBox.html)   | Sarcina: Utilizarea  **display grid** | 
 | [eightBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/eighthBox.html)   | Sarcina: Utilizarea  **display grid** | 
 | [ninthBox.html](https://github.com/riafaya/1rep/blob/gitbox/gritBox/ninthBox.html)   | Sarcina: Utilizarea  **display grid** | 
-
+| [calculator.html](https://github.com/riafaya/1rep/blob/calculator/calculator.html)   | Sarcina: Utilizarea  **display grid si flex pentru crearea calculator** | 
 
