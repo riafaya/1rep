@@ -48,4 +48,6 @@
 | [console.html](https://github.com/riafaya/1rep/blob/js/javaScript/console.html)   | Sarcina: Utilizarea js folosind  **console.log()** | 
 | [alert.html](https://github.com/riafaya/1rep/blob/js/javaScript/alert.html)   | Sarcina: Utilizarea js folosind  **alert()** | 
 | [document.html](https://github.com/riafaya/1rep/blob/js/javaScript/document.html)   | Sarcina: Utilizarea js folosind  **document.write()** | 
+| [convert.html](https://github.com/riafaya/1rep/blob/js/jsTask/convert.html)   | Sarcina: Utilizarea js pentru  **convertire** | 
+| [mars.html](https://github.com/riafaya/1rep/blob/js/jsTask/mars.html)   | Sarcina: Utilizarea js prin folosirea  **variabilelor** | 
 
