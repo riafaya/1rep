@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #fad2d2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: rgba(255, 246, 246, 0.717);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(46, 46, 46, 0.1);
+            width: 300px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ada494;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        p.result {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Temperature Converter</h1>
+
+        <p>Enter the temperature in degree Celsius:</p>
+        <input type="number" id="celsiusInput" oninput="updateFahrenheitResult(event)">
+
+        <p>Enter the temperature in degree Fahrenheit:</p>
+        <input type="number" id="fahrenheitInput" oninput="updateCelsiusResult(event)">
+
+        <p class="result" id="resultFahrenheit"></p>
+        <p class="result" id="resultCelsius"></p>
+    </div>
+
+    <script>
+        function celsiusToFahrenheit(celsius){
+            return (celsius * 9 / 5) + 32;
+        }
+
+        function fahrenheitToCelsius(fahrenheit){
+            return (fahrenheit - 32) * 5 / 9;
+        }
+
+        function updateFahrenheitResult(event) {
+            var celsiusInputValue = event.target.value;
+            var fahrenheitResult = celsiusToFahrenheit(parseFloat(celsiusInputValue));
+            document.getElementById("resultFahrenheit").innerText = "Temperature in gegree Fahrenheit: " + fahrenheitResult.toFixed(2);
+        }
+
+        function updateCelsiusResult(event) {
+            var fahrenheitInputValue = event.target.value;
+            var celsiusResult = fahrenheitToCelsius(parseFloat(fahrenheitInputValue));
+            document.getElementById("resultCelsius").innerText = "Temperature in degree Celsius: " + celsiusResult.toFixed(2);
+        }
+    </script>
+</body>
+</html>
