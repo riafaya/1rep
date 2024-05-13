@@ -69,7 +69,7 @@
         function fahrenheitToCelsius(fahrenheit){
             return (fahrenheit - 32) * 5 / 9;
         }
-
+        
         function updateFahrenheitResult(event) {
             var celsiusInputValue = event.target.value;
             var fahrenheitResult = celsiusToFahrenheit(parseFloat(celsiusInputValue));
@@ -81,6 +81,7 @@
             var celsiusResult = fahrenheitToCelsius(parseFloat(fahrenheitInputValue));
             document.getElementById("resultCelsius").innerText = "Temperature in degree Celsius: " + celsiusResult.toFixed(2);
         }
+
     </script>
 </body>
 </html>

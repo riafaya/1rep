@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Number</title>
+        <style>
+            body{
+                font-family: 'Times New Roman', Times, serif;
+                background-color: aliceblue;
+                margin: 0;
+                padding: 20px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container{
+                background-color: #fff;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                padding: 20px;
+                margin-bottom: 20px;
+                width: 300px;
+                text-align: center;
+            }
+
+            h3{
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+
+            label{
+                font-weight: bold;
+            }
+
+            input[type="number"]{
+                padding: 8px;
+                border: 1px solid #ccc;
+                border-radius: 3px;
+                margin-bottom: 10px;
+                width: 100%;
+            }
+
+            button{
+                padding: 10px;
+                background-color: #4CAF50;
+                color: white;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: backround-color 0.3s;
+                width: 100%;
+            }
+
+            button:hover{
+                background-color: #45a049;
+            }
+
+            .result{
+                margin-top: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h3>1: Get the difference between a given number and 13</h3>
+            <label for="nr1_p1">Enter Number:</label><br>
+            <input type="number" id="nr1_p1" placeholder="Enter a number"><br>
+            <button onclick="calculateDifference()">Calculate Difference</button>
+            <div id="resultDifference" class="result"></div>
+        </div>
+
+        <div class="container">
+            <h3>2: Check if one number is positive and another one is negative</h3>
+            <label for="nr1_p2">Enter first number:</label><br>
+            <input type="number" id="nr1_p2" placeholder="Enter first number"><br>
+            <label for="nr2_p2">Enter second number:</label><br>
+            <input type="number" id="nr2_p2" placeholder="Enter second number"><br>
+            <button onclick="checkPosNeg()">Check</button>
+            <div id="resultPosNeg" class="result"></div>
+        </div>
+
+        <div class="container">
+            <h3>3: Calculate multiplication and division of two number</h3>
+            <label for="nr1_p3">Enter first number:</label><br>
+            <input type="number" id="nr1_p3" placeholder="Enter first number"><br>
+            <label for="nr2_p3">Enter second number:</label><br>
+            <input type="number" id="nr2_p3" placeholder="Enter second number"><br>
+            <button onclick="calculateOperations()">Calculate</button>
+            <div id="resultMultiplication" class="result"></div>
+            <div id="resultDivision" class="result"></div>
+        </div>
+
+        <script>
+            function calculateDifference(){
+                var nr1 =parseFloat(document.getElementById("nr1_p1").value);
+                var difference = (nr1 > 13) ? (nr1 - 13) * 2 : - nr1;
+                document.getElementById("resultDifference").textContent = "Difference: " +difference;
+            }
+            function checkPosNeg() {
+                var nr1 = parseFloat(document.getElementById("nr1_p2").value);
+                var nr2 = parseFloat(document.getElementById("nr2_p2").value);
+
+                if (nr1 > 0 && nr2 < 0) {
+                document.getElementById("resultPosNeg").textContent = "The first number is positive and the second number is negative.";
+                } else if (nr1 < 0 && nr2 > 0) {
+                document.getElementById("resultPosNeg").textContent = "The first number is negative and the second number is positive.";
+                } else if (nr1 < 0 && nr2 < 0) {
+                document.getElementById("resultPosNeg").textContent = "Both numbers are negative.";
+                } else if (nr1 > 0 && nr2 > 0) {
+                document.getElementById("resultPosNeg").textContent = "Both numbers are positive.";
+                } else {
+                 document.getElementById("resultPosNeg").textContent = "At least one of the numbers must be positive or negative.";
+                }
+            }    
+
+            function calculateOperations(){
+                var nr1 =parseFloat(document.getElementById("nr1_p3").value);
+                var nr2 =parseFloat(document.getElementById("nr2_p3").value);
+                
+                var multiplication = nr1 * nr2;
+                var division = nr1 / nr2;
+
+                document.getElementById("resultMultiplication").textContent = "Multiplication:" + multiplication;
+                document.getElementById("resultDivision").textContent = "Division:" + division;
+
+            }
+        </script>
+    </body>
+</html>
