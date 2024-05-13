@@ -50,4 +50,5 @@
 | [document.html](https://github.com/riafaya/1rep/blob/js/javaScript/document.html)   | Sarcina: Utilizarea js folosind  **document.write()** | 
 | [convert.html](https://github.com/riafaya/1rep/blob/js/jsTask/convert.html)   | Sarcina: Utilizarea js pentru  **convertire** | 
 | [mars.html](https://github.com/riafaya/1rep/blob/js/jsTask/mars.html)   | Sarcina: Utilizarea js prin folosirea  **variabilelor** | 
+| [mars.html](https://github.com/riafaya/1rep/blob/js/jsTask/number.html)   | Sarcina: Utilizarea js prin folosirea metodelor   **document.getElementById** | 
 
