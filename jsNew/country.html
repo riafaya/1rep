@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Country Phone Prefix</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #d3cdcd;
+            }
+            .container{
+             background-color: #ffffff;  
+             padding: 20px;
+             border-radius: 8px;
+             box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1); 
+            }
+            label{
+                font-weight: bold;
+            }
+            select{
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #b8b8b8;
+                border-radius: 4px;
+            }
+            #result{
+                margin-top: 10px;
+                font-size: 18px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <label for="countrySelect">Select a country:</label>
+            <select id="countrySelect" onchange="getPhonePrefix()">
+                <option value="US">United States (US)</option>
+                <option value="CA">Canada (CA)</option>
+                <option value="GB">United Kingdom (GB)</option>
+                <option value="KR">Korea (KR)</option>
+                <option value="DE">Germany (DE)</option>
+                <option value="JP">Japan (JP)</option>
+                <option value="FR">France (FR)</option>
+                <option value="CN">China (CN)</option>
+                <option value="IN">India (IN)</option>
+                <option value="BR">Brazil (BR)</option>
+                <option value="UA">Ukraine(UA)</option>
+            </select>
+            <div id="result"></div>
+        </div>
+        <script>
+           function getPhonePrefix() {
+    var countrySelect = document.getElementById("countrySelect");
+    var resultDiv = document.getElementById("result");
+    var selectedOption = countrySelect.options[countrySelect.selectedIndex];
+    var countryAbbreviation = selectedOption.value;
+    
+    switch(countryAbbreviation) {
+        case "US":
+            resultDiv.innerText = "Phone Prefix: +1";
+            break;
+        case "CA":
+            resultDiv.innerText = "Phone Prefix: +1";
+            break;
+        case "GB":
+            resultDiv.innerText = "Phone Prefix: +44";
+            break;
+        case "KR":
+            resultDiv.innerText = "Phone Prefix: +82";
+            break;
+        case "DE":
+            resultDiv.innerText = "Phone Prefix: +49";
+            break;
+        case "JP":
+            resultDiv.innerText = "Phone Prefix: +81";
+            break;
+        case "FR":
+            resultDiv.innerText = "Phone Prefix: +33";
+            break;
+        case "CN":
+            resultDiv.innerText = "Phone Prefix: +86";
+            break;
+        case "IN":
+            resultDiv.innerText = "Phone Prefix: +91";
+            break;
+        case "BR":
+            resultDiv.innerText = "Phone Prefix: +55";
+            break;
+        default:
+            resultDiv.innerText = "Unknown country abbreviation";
+    }
+}
+        </script>
+    </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<title>Type Checker</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .container {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Type Check</h1>
+  <p>Enter a value:</p>
+  <input type="text" id="inputValue">
+  <button onclick="checkType()">Check Type</button>
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkType() {
+    var value = document.getElementById("inputValue").value;
+    var typeInfo = getTypeInfo(value);
+    document.getElementById("result").innerHTML = "<p>Type of the input is: " + typeInfo.type + "</p>" +
+                                                   "<p>Value: " + typeInfo.value + "</p>";
+  }
+
+  function getTypeInfo(value) {
+    if (!isNaN(value)) {
+      if (value.indexOf('.') !== -1) {
+        return { type: 'number', value: parseFloat(value) };
+      } else {
+        return { type: 'number', value: parseInt(value) };
+      }
+    } else if (value === 'true' || value === 'false') {
+      return { type: 'boolean', value: value === 'true' };
+    } else if (value === 'null') {
+      return { type: 'null', value: null };
+    } else if (value === 'undefined') {
+      return { type: 'undefined', value: undefined };
+    } else {
+      return { type: 'string', value: value };
+    }
+  }
+</script>
+
+</body>
+</html>
