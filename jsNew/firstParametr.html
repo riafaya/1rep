@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>JS Function </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 20px;
+                background-color: #f0f0f0;
+            }
+            .container {
+                max-width: 600px;
+                margin: auto;
+                background: white;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            }
+            h1 {
+                text-align: center;
+            }
+            .form-group {
+                margin-bottom: 15px;
+            }
+            label {
+                display: block;
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+            input, button {
+                width: 100%;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            button {
+                background-color: #007BFF;
+                color: white;
+                border: none;
+            }
+            button:hover {
+                background-color: #0056b3;
+            }
+            .result {
+                margin-top: 20px;
+                padding: 15px;
+                background-color: #e9ecef;
+                border: 1px solid #dee2e6;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body>
+      <h1>JS Function</h1>  
+      <div class="form-group">
+        <label for="arrayInput">Enter Array:</label>
+        <input type="text" id="arrayInput"placeholder="e.g., passion fruit, kiwi ">
+      </div>
+      <div class="form-group">
+        <label for="separatorInput">Enter separator:</label>
+        <input type="text" id="separatorInput" placeholder="e.g., -">
+    </div>
+    <button onclick="joinArray()">Join Array</button>
+    
+    <div id="arrayResult" class="result"></div>
+    
+    <div class="form-group">
+        <label for="processInput">Enter number or string:</label>
+        <input type="text" id="processInput" placeholder="e.g., 345 or anb">
+    </div>
+    <button onclick="processInputFunction()">Process Input</button>
+    
+    <div id="processResult" class="result"></div>
+</div>
+
+<script>
+    function joinArrayWithSeparator(arr, separator) {
+        return arr.join(separator);
+    }
+    function processInput(input) {
+        if (!isNaN(input)) {
+            return parseInt(input.toString().split('').reverse().join(''));
+        }
+        else if (typeof input === 'string') {
+            return input.split('').sort().join('');
+        }
+        else{
+            return null;
+        }
+    }
+
+    function joinArray(){
+        const arrayInput = document.getElementById('arrayInput').value;
+        const separatorInput = document.getElementById('separatorInput').value;
+        const array = arrayInput.split(',');
+        const result = joinArrayWithSeparator(array, separatorInput);
+        document.getElementById('arrayResult').textContent = `Result: ${result}`;
+    }
+
+    function processInputFunction(){
+        const input =document.getElementById('processInput').value;
+        const result = processInput(input);
+        document.getElementById('processResult').textContent = `Result: ${result}`;
+    }
+</script>
+    </body>
+</html>

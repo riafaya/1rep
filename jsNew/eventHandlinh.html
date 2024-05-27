@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.click-counter {
+    margin-bottom: 20px;
+}
+
+.click-box {
+    width: 100px;
+    height: 100px;
+    background-color: #007BFF;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: auto;
+}
+
+.key-message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    color: #007BFF;
+}
+
+.form-message {
+    color: red;
+    text-align: center;
+    margin-top: 20px;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Event Handling </h1>
+        <div class="button-container">
+            <span id="showImageButton" class="button">Show Image</span>
+            <span id="removeImageButton" class="button">Remove Image</span>
+        </div>
+
+        <img id="toggleImage" src="https://images.pexels.com/photos/24012659/pexels-photo-24012659/free-photo-of-glass-of-drink-in-black-and-white.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Toggle Image" style="display:none;">
+       
+        <div class="click-counter">
+            <p>Click the box to count:</p>
+            <div id="clickBox" class="click-box"></div>
+        </div>
+
+       
+        <div id="keyMessage" class="key-message"></div>
+
+        
+        <form id="inputForm">
+            <input type="text" id="field1" placeholder="Field 1"><br>
+            <input type="text" id="field2" placeholder="Field 2"><br>
+            <input type="text" id="field3" placeholder="Field 3"><br>
+            <input type="text" id="field4" placeholder="Field 4"><br>
+            <input type="text" id="field5" placeholder="Field 5"><br>
+            <button type="submit">Submit</button>
+        </form>
+        <div id="formMessage" class="form-message"></div>
+    </div>
+
+    <script >
+        document.addEventListener('DOMContentLoaded', function(){
+            const showImageButton=document.getElementById('showImageButton');
+            const removeImageButton=document.getElementById('removeImageButton');
+            const toggleImage = document.getElementById('toggleImage');
+            const clickBox = document.getElementById('clickBox');
+            const keyMessage = document.getElementById('keyMessage');
+            const inputForm = document.getElementById('inputForm');
+            const formMessage = document.getElementById('formMessage');
+            let clickCount = 0;
+        
+        showImageButton.addEventListener('click', function(){ 
+            toggleImage.style.display='block';
+        });
+        toggleImage.addEventListener('click',function(){
+            toggleImage.style.display='none';
+        });
+        removeImageButton.addEventListener('click',function(){
+            toggleImage.style.display='none';
+            toggleImage.src='';
+        });
+        clickBox.addEventListener('click', function(){
+            clickCount++;
+            console.log('Click count:', clickCount);
+        });
+        const keyPressed =[];
+        const secretCode=['a','b','c','d'];
+        document.addEventListener('keydown', function(event){
+            keyPressed.push(event.key);
+            if (keyPressed.join(''.includes(secretCode.join('')))){
+                keyMessage.textContent = 'Secret message: You pressed a, b, c, d!';
+                keyPressed.length=0;
+            }
+        });
+        inputForm.addEventListener('submit', function(event){
+            event.preventDefault();
+            const fields = inputForm.querySelectorAll('input[type="text"]');
+            const allFieldsFilled= Array.from(fields).every(field => field.value);
+            
+            formMessage.textContent = allFieldsFilled? 'Form submitted successfully!' : 'Please fill out all fields.';
+            formMessage.style.color =allFieldsFilled? 'green' : 'red';
+        })
+    })
+    </script>
+</body>
+</html>
+    </div>
+</body>
+</html>
