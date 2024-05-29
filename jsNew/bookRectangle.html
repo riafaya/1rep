@@ -84,7 +84,7 @@ const book = {
         console.log(`Percentage read: ${perentage.toFixed(2)}%`);
     },
     isRead(){
-        return this.currentPage >= this.pages;
+        return this.currentPage === this.pages;
     }
 };
 function readBook(){

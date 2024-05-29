@@ -1,0 +1,178 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Date Functions</title>
+        <style>
+            body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+input[type="date"] {
+  margin-right: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 16px;
+}
+
+div {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Date Functions</h1>
+            <div class="section" id="current-date-section">
+                <h2>Current Date&Time</h2>
+                <div id="curent-date"></div>
+            </div>
+            <div class="section">
+                <h2>Month Name</h2>
+                <input type="date" id="month-date">
+                <button onclick="displayMonthName"></button>
+                <div id="month-name"></div>
+            </div>
+            <div class="section">
+                <h2>Check Same Weekday</h2>
+                <input type="date" id="date1">
+                <input type="date" id="date2">
+                <button onclick="checkSameWeekday()">Check Weekday</button>
+                <div id="same-weekday"></div>
+              </div>
+          
+              <div class="section">
+                <h2>Date Difference in Days</h2>
+                <input type="date" id="diff-date1">
+                <input type="date" id="diff-date2">
+                <button onclick="displayDateDifference()">Calculate Difference</button>
+                <div id="date-difference"></div>
+              </div>
+          
+              <div class="section">
+                <h2>Get Minimum Date</h2>
+                <input type="date" id="min-date1">
+                <input type="date" id="min-date2">
+                <input type="date" id="min-date3">
+                <button onclick="displayMinDate()">Get Minimum Date</button>
+                <div id="min-date"></div>
+              </div>
+        </div>
+        <script>
+           
+function updateCurrentDate() {
+  const currentDateElement = document.getElementById('current-date');
+  const now = new Date();
+  currentDateElement.textContent = now.toLocaleString();
+}
+
+updateCurrentDate();
+setInterval(updateCurrentDate, 1000);
+
+function getMonthName(date) {
+  const monthNames = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+  return monthNames[date.getMonth()];
+}
+
+function displayMonthName() {
+  const dateInput = document.getElementById('month-date').value;
+  if (dateInput) {
+    const date = new Date(dateInput);
+    const monthName = getMonthName(date);
+    document.getElementById('month-name').textContent = `Month: ${monthName}`;
+  } else {
+    document.getElementById('month-name').textContent = 'Please select a date';
+  }
+}
+
+
+function isSameWeekday(date1, date2) {
+  return date1.getDay() === date2.getDay();
+}
+
+
+function checkSameWeekday() {
+  const date1Input = document.getElementById('date1').value;
+  const date2Input = document.getElementById('date2').value;
+  if (date1Input && date2Input) {
+    const date1 = new Date(date1Input);
+    const date2 = new Date(date2Input);
+    const sameWeekday = isSameWeekday(date1, date2);
+    document.getElementById('same-weekday').textContent = `Same Weekday: ${sameWeekday}`;
+  } else {
+    document.getElementById('same-weekday').textContent = 'Please select both dates';
+  }
+}
+
+
+function dateDifferenceInDays(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000; 
+  const diffInTime = date2.getTime() - date1.getTime();
+  return Math.round(diffInTime / oneDay);
+}
+
+
+function displayDateDifference() {
+  const date1Input = document.getElementById('diff-date1').value;
+  const date2Input = document.getElementById('diff-date2').value;
+  if (date1Input && date2Input) {
+    const date1 = new Date(date1Input);
+    const date2 = new Date(date2Input);
+    const difference = dateDifferenceInDays(date1, date2);
+    document.getElementById('date-difference').textContent = `Difference in Days: ${difference}`;
+  } else {
+    document.getElementById('date-difference').textContent = 'Please select both dates';
+  }
+}
+
+function getMinDate(dates) {
+  return new Date(Math.min.apply(null, dates));
+}
+
+function displayMinDate() {
+  const date1Input = document.getElementById('min-date1').value;
+  const date2Input = document.getElementById('min-date2').value;
+  const date3Input = document.getElementById('min-date3').value;
+  if (date1Input && date2Input && date3Input) {
+    const date1 = new Date(date1Input);
+    const date2 = new Date(date2Input);
+    const date3 = new Date(date3Input);
+    const minDate = getMinDate([date1, date2, date3]);
+    document.getElementById('min-date').textContent = `Minimum Date: ${minDate.toDateString()}`;
+  } else {
+    document.getElementById('min-date').textContent = 'Please select all three dates';
+  }
+}
+
+        </script>
+    </body>
+</html>
