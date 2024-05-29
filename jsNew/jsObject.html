@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+ <html>
+    <head>
+        <meta charset="UTF-8">   
+        <title>JS Objects</title>
+        <style>
+            body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007BFF;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+#books-list li {
+  margin-bottom: 10px;
+}
+
+.recipe {
+  margin-bottom: 20px;
+}
+
+.recipe-title {
+  font-weight: bold;
+}
+
+        </style>
+     </head>
+     <body>
+        <h1>JS Objects</h1>
+        <section id="car-section">
+            <h2>Car</h2>
+            <div class="car"></div>
+            <p id="car-info"></p>
+            <button id="start-btn">Start</button>
+            <button id="drive-btn">Drive</button>
+            <button id="stop-btn">Stop</button>
+            <button id="honk-btn">Honk</button>
+          </section>
+
+        <section id="recipe-section">
+            <h2>Favorite Recipes</h2>
+            <div class="recipe">
+              <p class="recipe-title" id="recipe1-title"></p>
+              <p class="recipe-servings" id="recipe1-servings"></p>
+              <p class="recipe-ingredients" id="recipe1-ingredients"></p>
+            </div>
+            <div class="recipe">
+              <p class="recipe-title" id="recipe2-title"></p>
+              <p class="recipe-servings" id="recipe2-servings"></p>
+              <p class="recipe-ingredients" id="recipe2-ingredients"></p>
+            </div>
+          </section>
+        <section id="book-section">
+            <h2>Book</h2>
+            <ul id="books-list"></ul>
+        </section>
+        <script>
+            const car = {
+  make: "Toyota",
+  model: "Camry",
+  year: 2020,
+  color: "red",
+  start: function() {
+    console.log("The car is starting");
+  },
+  drive: function() {
+    console.log("The car is driving");
+  },
+  stop: function() {
+    console.log("The car is stopped");
+  },
+  honk: function() {
+    console.log("Honk Honk!");
+  }
+};
+
+
+document.getElementById('car-info').innerText = `${car.make} ${car.model}, ${car.year}, ${car.color}`;
+
+
+document.getElementById('start-btn').addEventListener('click', function() {
+  car.start();
+});
+
+document.getElementById('drive-btn').addEventListener('click', function() {
+  car.drive();
+});
+
+document.getElementById('stop-btn').addEventListener('click', function() {
+  car.stop();
+});
+
+document.getElementById('honk-btn').addEventListener('click', function() {
+  car.honk();
+});
+
+const favoriteRecipe1 = {
+  title: "Mole",
+  servings: 2,
+  ingredients: ["cinnamon", "cumin", "cocoa"]
+};
+
+const favoriteRecipe2 = {
+  title: "Pasta Carbonara",
+  servings: 4,
+  ingredients: ["pasta", "eggs", "parmesan cheese", "bacon", "black pepper"]
+};
+
+
+document.getElementById('recipe1-title').innerText = favoriteRecipe1.title;
+document.getElementById('recipe1-servings').innerText = `Serves: ${favoriteRecipe1.servings}`;
+document.getElementById('recipe1-ingredients').innerText = "Ingredients:\n" + favoriteRecipe1.ingredients.join("\n");
+
+document.getElementById('recipe2-title').innerText = favoriteRecipe2.title;
+document.getElementById('recipe2-servings').innerText = `Serves: ${favoriteRecipe2.servings}`;
+document.getElementById('recipe2-ingredients').innerText = "Ingredients:\n" + favoriteRecipe2.ingredients.join("\n");
+
+
+const books = [
+  { title: "The Hobbit", author: "J.R.R. Tolkien", alreadyRead: true },
+  { title: "The Lord of the Rings", author: "J.R.R. Tolkien", alreadyRead: false },
+  { title: "1984", author: "George Orwell", alreadyRead: true },
+  { title: "To Kill a Mockingbird", author: "Harper Lee", alreadyRead: false }
+];
+
+const booksList = document.getElementById('books-list');
+books.forEach(book => {
+  const bookItem = document.createElement('li');
+  bookItem.innerText = `${book.title} by ${book.author}`;
+  if (book.alreadyRead) {
+    bookItem.innerText += ` - You already read "${book.title}"`;
+  } else {
+    bookItem.innerText += ` - You still need to read "${book.title}"`;
+  }
+  booksList.appendChild(bookItem);
+});
+
+
+        </script>
+     </body>
+ </html>
