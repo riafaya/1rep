@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Scores</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+input, button {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#studentList {
+    margin-top: 20px;
+}
+
+.student {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.student:last-child {
+    border-bottom: none;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Student Scores</h1>
+        <input type="number" id="threshold" placeholder="Enter threshold score">
+        <button id="processButton">Filter and Sort</button>
+        <div id="studentList"></div>
+    </div>
+    
+     <script>
+         document.getElementById('processButton').addEventListener('click', processStudents);
+
+const students = [
+    { name: 'Alina', scores: [90, 85, 88] },
+    { name: 'Davina', scores: [70, 60, 75] },
+    { name: 'Nikoly', scores: [95, 92, 89] },
+    { name: 'David', scores: [65, 70, 60] },
+];
+
+function calculateAverage(scores) {
+    const total = scores.reduce((sum, score) => sum + score, 0);
+    return total / scores.length;
+}
+
+function processStudents() {
+    const thresholdInput = document.getElementById('threshold');
+    const threshold = parseFloat(thresholdInput.value);
+    
+    if (isNaN(threshold)) {
+        alert('Please enter a valid threshold score');
+        return;
+    }
+
+    const studentListDiv = document.getElementById('studentList');
+    studentListDiv.innerHTML = '';
+
+    const processedStudents = students.map(student => {
+        const averageScore = calculateAverage(student.scores);
+        return { ...student, averageScore };
+    }).filter(student => student.averageScore >= threshold)
+      .sort((a, b) => b.averageScore - a.averageScore);
+
+    processedStudents.forEach(student => {
+        const studentDiv = document.createElement('div');
+        studentDiv.className = 'student';
+        studentDiv.innerHTML = `<strong>${student.name}</strong> - Average Score: ${student.averageScore.toFixed(2)}`;
+        studentListDiv.appendChild(studentDiv);
+    });
+}
+
+        </script>
+    </body>
+</html>
