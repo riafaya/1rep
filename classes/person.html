@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Person Class</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .person-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .person-info button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .person-info button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="person-info">
+        <h1>Person Information</h1>
+        <div id="person1"></div>
+        <div id="person2"></div>
+        <div id="person3"></div>
+        <button onclick="showIntroductions()">Show Introductions</button>
+        <button onclick="updateEmails()">Update Emails</button>
+    </div>
+
+    <script>
+        class Person {
+            constructor(firstName, lastName, age, email) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.email = email;
+            }
+
+            introduce() {
+                return `My name is ${this.firstName} ${this.lastName} and I am ${this.age} years old.`;
+            }
+
+            setEmail(newEmail) {
+                this.email = newEmail;
+            }
+
+            getEmail() {
+                return this.email;
+            }
+        }
+
+        const person1 = new Person('Ion', 'Ioan', 30, 'john.ioan@gmail.com');
+        const person2 = new Person('Violeta', 'Smith', 25, 'vio.smith@gmail.com');
+        const person3 = new Person('Alina', 'Andersen', 35, 'alina.andersen@gmail.com');
+
+        function displayPersonInfo() {
+            document.getElementById('person1').textContent = person1.introduce();
+            document.getElementById('person2').textContent = person2.introduce();
+            document.getElementById('person3').textContent = person3.introduce();
+        }
+
+        function showIntroductions() {
+            displayPersonInfo();
+            console.log(person1.introduce());
+            console.log(person2.introduce());
+            console.log(person3.introduce());
+        }
+
+        function updateEmails() {
+            person1.setEmail('john.ioan@gmail.com');
+            person2.setEmail('vio.smith@gmail.com');
+            person3.setEmail('alina.andersen@gmail.com');
+
+            console.log(person1.getEmail());
+            console.log(person2.getEmail());
+            console.log(person3.getEmail());
+        }
+
+        displayPersonInfo();
+    </script>
+</body>
+</html>

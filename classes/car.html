@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Class</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .car-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .car-info button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .car-info button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="car-info">
+        <h1>Car Information</h1>
+        <p id="car-make-model"></p>
+        <p id="car-year"></p>
+        <p id="car-speed"></p>
+        <button onclick="accelerateCar()">Accelerate</button>
+        <button onclick="brakeCar()">Brake</button>
+        <button onclick="showCurrentSpeed()">Show Current Speed</button>
+    </div>
+
+    <script>
+        class Car {
+            constructor(make, model, year, speed = 0) {
+                this.make = make;
+                this.model = model;
+                this.year = year;
+                this.speed = speed;
+            }
+
+            accelerate() {
+                this.speed += 10;
+            }
+
+            brake() {
+                this.speed -= 7;
+                if (this.speed < 0) this.speed = 0;
+            }
+
+            currentSpeed() {
+                return this.speed;
+            }
+        }
+
+        const myCar = new Car('Toyota', 'Corolla', 2020);
+
+        function displayCarInfo() {
+            document.getElementById('car-make-model').textContent = `Make & Model: ${myCar.make} ${myCar.model}`;
+            document.getElementById('car-year').textContent = `Year: ${myCar.year}`;
+            document.getElementById('car-speed').textContent = `Current Speed: ${myCar.currentSpeed()} km/h`;
+        }
+
+        function accelerateCar() {
+            myCar.accelerate();
+            displayCarInfo();
+        }
+
+        function brakeCar() {
+            myCar.brake();
+            displayCarInfo();
+        }
+
+        function showCurrentSpeed() {
+            alert(`Current Speed: ${myCar.currentSpeed()} km/h`);
+        }
+
+        displayCarInfo();
+    </script>
+</body>
+</html>
