@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+/* Form container */
+.form-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Form title */
+.form-title {
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+/* Form error messages */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Form submit button */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Optional: Add styles for green success messages */
+.success {
+  color: green;
+}
+</style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2 class="form-title">Registration Form</h2>
+  <form id="registrationForm" onsubmit="validateForm(event)">
+    <div>
+      <label for="userId">User ID:</label>
+      <input type="text" id="userId" name="userId" placeholder="Required" class="required">
+      <span class="error" id="userIdError"></span>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Required" class="required">
+      <span class="error" id="passwordError"></span>
+    </div>
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" placeholder="Required" class="required">
+      <span class="error" id="nameError"></span>
+    </div>
+    <div>
+      <label for="address">Address:</label>
+      <input type="text" id="address" name="address" placeholder="Optional">
+    </div>
+    <div>
+      <label for="country">Country:</label>
+      <select id="country" name="country" class="required">
+        <option value="">Please select a country</option>
+    
+      </select>
+      <span class="error" id="countryError"></span>
+    </div>
+    <div>
+      <label for="zipCode">ZIP Code:</label>
+      <input type="text" id="zipCode" name="zipCode" placeholder="Required" class="required">
+      <span class="error" id="zipCodeError"></span>
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" placeholder="Required" class="required">
+      <span class="error" id="emailError"></span>
+    </div>
+    <div>
+      <label>Sex:</label>
+      <input type="radio" id="male" name="sex" value="male" class="required"> Male
+      <input type="radio" id="female" name="sex" value="female" class="required"> Female
+      <span class="error" id="sexError"></span>
+    </div>
+    <div>
+      <label>Language:</label>
+      <input type="radio" id="english" name="language" value="english" class="required"> English
+      <input type="radio" id="nonEnglish" name="language" value="nonEnglish" class="required"> Non English
+      <span class="error" id="languageError"></span>
+    </div>
+    <div>
+      <label for="about">About:</label>
+      <textarea id="about" name="about" placeholder="Optional"></textarea>
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+<script>
+function validateForm(event) {
+  event.preventDefault();
+  
+  const form = document.getElementById('registrationForm');
+  const userId = form.userId.value.trim();
+  const password = form.password.value.trim();
+  const name = form.name.value.trim();
+  const country = form.country.value.trim();
+  const zipCode = form.zipCode.value.trim();
+  const email = form.email.value.trim();
+  const sex = form.sex.value;
+  const language = form.language.value;
+  
+  
+  const errorElements = form.querySelectorAll('.error');
+  errorElements.forEach(element => element.textContent = '');
+
+  
+  let isValid = true;
+
+  if (userId === '') {
+    document.getElementById('userIdError').textContent = 'User ID is required';
+    isValid = false;
+  } else if (userId.length < 5 || userId.length > 12) {
+    document.getElementById('userIdError').textContent = 'User ID must be between 5 to 12 characters';
+    isValid = false;
+  }
+
+  if (password === '') {
+    document.getElementById('passwordError').textContent = 'Password is required';
+    isValid = false;
+  } else if (password.length < 7 || password.length > 12) {
+    document.getElementById('passwordError').textContent = 'Password must be between 7 to 12 characters';
+    isValid = false;
+  }
+
+  if (name === '') {
+    document.getElementById('nameError').textContent = 'Name is required';
+    isValid = false;
+  } else if (!/^[A-Za-z]+$/.test(name)) {
+    document.getElementById('nameError').textContent = 'Name must contain only alphabets';
+    isValid = false;
+  }
+
+  if (country === '') {
+    document.getElementById('countryError').textContent = 'Please select a country';
+    isValid = false;
+  }
+
+  if (zipCode === '') {
+    document.getElementById('zipCodeError').textContent = 'ZIP Code is required';
+    isValid = false;
+  } else if (!/^\d+$/.test(zipCode)) {
+    document.getElementById('zipCodeError').textContent = 'ZIP Code must contain only digits';
+    isValid = false;
+  }
+
+  if (email === '') {
+    document.getElementById('emailError').textContent = 'Email is required';
+    isValid = false;
+  } else if (!isValidEmail(email)) {
+    document.getElementById('emailError').textContent = 'Invalid email format';
+    isValid = false;
+  }
+
+  if (!sex) {
+    document.getElementById('sexError').textContent = 'Sex is required';
+    isValid = false;
+  }
+
+  if (!language) {
+    document.getElementById('languageError').textContent = 'Language is required';
+    isValid = false;
+  }
+
+
+  if (isValid) {
+    form.submit();
+  }
+}
+
+function isValidEmail(email) {
+ 
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+const countries = [
+  "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Congo", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czech Republic", "Democratic Republic of the Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Ivory Coast", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "Taiwan", "Tajikistan", "Tanzania", "Thailand", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Vatican City", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"
+];
+
+const countrySelect = document.getElementById('country');
+
+countries.forEach(country => {
+  const option = document.createElement('option');
+  option.textContent = country;
+  option.value = country;
+  countrySelect.appendChild(option);
+});
+
+</script>
+</body>
+</html>

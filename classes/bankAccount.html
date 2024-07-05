@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bank Account Class</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .account-info {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .account-info button {
+            margin: 5px;
+            padding: 10px 15px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .account-info button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="account-info">
+        <h1>Bank Account Information</h1>
+        <p id="account-type"></p>
+        <p id="account-balance"></p>
+        <button onclick="depositToAccount()">Deposit</button>
+        <button onclick="withdrawFromAccount()">Withdraw</button>
+        <button onclick="checkAccountBalance()">Check Balance</button>
+    </div>
+
+    <script>
+        class BankAccount {
+            #accountNumber;
+            #balance;
+
+            constructor(accountNumber, balance, accountType) {
+                this.#accountNumber = accountNumber;
+                this.#balance = balance;
+                this.accountType = accountType;
+            }
+
+            deposit(amount) {
+                this.#balance += amount;
+            }
+
+            withdraw(amount) {
+                if (amount > this.#balance) {
+                    console.log('Insufficient funds');
+                } else {
+                    this.#balance -= amount;
+                }
+            }
+
+            checkBalance() {
+                return this.#balance;
+            }
+
+            #setAccountNumber(accountNumber) {
+                this.#accountNumber = accountNumber;
+            }
+
+            #getAccountNumber() {
+                return this.#accountNumber;
+            }
+        }
+
+        const myAccount = new BankAccount('54367839983', 500, 'Checking');
+
+        function displayAccountInfo() {
+            document.getElementById('account-type').textContent = `Account Type: ${myAccount.accountType}`;
+            document.getElementById('account-balance').textContent = `Current Balance: $${myAccount.checkBalance()}`;
+        }
+
+        function depositToAccount() {
+            const amount = parseFloat(prompt('Enter deposit amount:'));
+            if (!isNaN(amount) && amount > 0) {
+                myAccount.deposit(amount);
+                displayAccountInfo();
+            } else {
+                alert('Invalid amount');
+            }
+        }
+
+        function withdrawFromAccount() {
+            const amount = parseFloat(prompt('Enter withdrawal amount:'));
+            if (!isNaN(amount) && amount > 0) {
+                myAccount.withdraw(amount);
+                displayAccountInfo();
+            } else {
+                alert('Invalid amount');
+            }
+        }
+
+        function checkAccountBalance() {
+            alert(`Current Balance: $${myAccount.checkBalance()}`);
+        }
+
+        displayAccountInfo();
+    </script>
+</body>
+</html>

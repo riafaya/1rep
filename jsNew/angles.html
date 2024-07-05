@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Angle Type</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f3ebeb;
+            }
+            .container{
+                text-align: center;
+            }
+            h1{
+                color: #464545;
+            }
+            input{
+                padding: 8px;
+                margin: 10px;
+            }
+            button{
+                padding: 10px 20px;
+                background-color: #6786a8;
+                color: #eee5e5;
+                border: none;
+                cursor: pointer;
+            }
+            button:hover{
+                background-color: #6ba1da;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Angle Type Finder</h1>
+            <input type="number" id="angleInput" placeholder="Enter angle in degree">
+            <button type="number" onclick="findAngleType()">Find Type</button>
+            <p id="result"></p>
+        </div>
+
+        <script>
+            function findAngleType() {
+            var angle = parseFloat(document.getElementById("angleInput").value);
+            var resultElement = document.getElementById("result");
+            var result;
+
+            if (isNaN(angle) || angle < 0 || angle > 180) {
+                result = "Invalid angle";
+            } else if (angle < 90) {
+                result = "Acute angle";
+            } else if (angle === 90) {
+                result = "Right angle";
+            } else if (angle < 180) {
+                result = "Obtuse angle";
+            } else {
+                result = "Straight angle";
+            }
+
+            resultElement.textContent = result;
+        }
+        </script>
+    </body>
+</html>

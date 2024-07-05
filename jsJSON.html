@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Operations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            display: flex;
+            justify-content: space-around;
+            width: 90%;
+            max-width: 1200px;
+        }
+        .section {
+            flex: 1;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section:nth-child(1) {
+            background-color: #ffcccb; /* Light red */
+        }
+        .section:nth-child(2) {
+            background-color: #ccffcc; /* Light green */
+        }
+        .section:nth-child(3) {
+            background-color: #cceeff; /* Light blue */
+        }
+        h2 {
+            text-align: center;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .input-group input,
+        .input-group textarea {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .input-group textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <div class="section">
+            <h2>Division</h2>
+            <div class="input-group">
+                <label for="num1">Number 1:</label>
+                <input type="number" id="num1">
+            </div>
+            <div class="input-group">
+                <label for="num2">Number 2:</label>
+                <input type="number" id="num2">
+            </div>
+            <button onclick="performSafeDivide()">Divide</button>
+            <div class="result" id="divideResult"></div>
+        </div>
+    
+        <div class="section">
+            <h2>Array Access</h2>
+            <div class="input-group">
+                <label for="arrayInput">Array:</label>
+                <input type="text" id="arrayInput">
+            </div>
+            <div class="input-group">
+                <label for="indexInput">Index:</label>
+                <input type="number" id="indexInput">
+            </div>
+            <button onclick="performSafeArrayAccess()">Access Array</button>
+            <div class="result" id="arrayResult"></div>
+        </div>
+        
+        <div class="section">
+            <h2>JSON Validation</h2>
+            <div class="input-group">
+                <label for="jsonInput">JSON String:</label>
+                <textarea id="jsonInput" rows="4"></textarea>
+            </div>
+            <div class="input-group">
+                <label for="propertiesInput">Required Properties:</label>
+                <input type="text" id="propertiesInput">
+            </div>
+            <button onclick="performValidateJsonStructure()">Validate JSON</button>
+            <div class="result" id="jsonResult"></div>
+        </div>
+    </div>
+
+    <script>
+        function performSafeDivide() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const result = safeDivide(num1, num2);
+            document.getElementById('divideResult').innerText = result;
+        }
+
+        function performSafeArrayAccess() {
+            const arrayInput = document.getElementById('arrayInput').value;
+            const index = parseInt(document.getElementById('indexInput').value, 10);
+            const array = arrayInput.split(',').map(item => item.trim());
+            const result = safeArrayAccess(array, index);
+            document.getElementById('arrayResult').innerText = result;
+        }
+
+        function performValidateJsonStructure() {
+            const jsonInput = document.getElementById('jsonInput').value;
+            const propertiesInput = document.getElementById('propertiesInput').value;
+            const requiredProperties = propertiesInput.split(',').map(item => item.trim());
+            const result = validateJsonStructure(jsonInput, requiredProperties);
+            document.getElementById('jsonResult').innerText = result;
+        }
+
+        function safeDivide(num1, num2) {
+            if (num2 === 0) {
+                return "Error: Division by zero is not allowed.";
+            }
+            return num1 / num2;
+        }
+
+        function safeArrayAccess(array, index) {
+            if (index < 0 || index >= array.length) {
+                return "Error: Index out of bounds.";
+            }
+            return array[index];
+        }
+
+        function validateJsonStructure(jsonString, requiredProperties) {
+            let jsonData;
+            try {
+                jsonData = JSON.parse(jsonString);
+            } catch (error) {
+                return "Error: Invalid JSON string.";
+            }
+
+            const missingProperties = requiredProperties.filter(prop => !(prop in jsonData));
+            if (missingProperties.length > 0) {
+                return `Error: Missing required properties: ${missingProperties.join(', ')}`;
+            }
+
+            return "Success: All required properties are present.";
+        }
+    </script>
+</body>
+</html>

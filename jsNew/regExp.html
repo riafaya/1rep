@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String Manipulation Functions</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        p {
+            background-color: #f1f1f1;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            margin-top: 10px;
+            word-break: break-word;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Functions</h1>
+        <div class="function-block">
+            <h2>Extract Numbers</h2>
+            <input type="text" id="extractNumbersInput" placeholder="Enter a string">
+            <button onclick="extractNumbers()">Extract Numbers</button>
+            <p id="extractNumbersResult"></p>
+        </div>
+        <div class="function-block">
+            <h2>Find Capitalized Words</h2>
+            <input type="text" id="findCapitalizedWordsInput" placeholder="Enter a string">
+            <button onclick="findCapitalizedWords()">Find Capitalized Words</button>
+            <p id="findCapitalizedWordsResult"></p>
+        </div>
+        <div class="function-block">
+            <h2>Validate Date Format</h2>
+            <input type="text" id="validateDateFormatInput" placeholder="Enter a date (YYYY-MM-DD)">
+            <button onclick="validateDateFormat()">Validate Date</button>
+            <p id="validateDateFormatResult"></p>
+        </div>
+        <div class="function-block">
+            <h2>Find Duplicate Words</h2>
+            <input type="text" id="findDuplicateWordsInput" placeholder="Enter a string">
+            <button onclick="findDuplicateWords()">Find Duplicate Words</button>
+            <p id="findDuplicateWordsResult"></p>
+        </div>
+        <div class="function-block">
+            <h2>Extract Domain from Email</h2>
+            <input type="text" id="extractDomainInput" placeholder="Enter an email">
+            <button onclick="extractDomain()">Extract Domain</button>
+            <p id="extractDomainResult"></p>
+        </div>
+    </div>
+    <script>
+        function extractNumbers() {
+            const input = document.getElementById('extractNumbersInput').value;
+            const numbers = input.match(/\d+/g);
+            document.getElementById('extractNumbersResult').innerText = numbers ? numbers.join(', ') : 'No numbers found';
+        }
+
+        function findCapitalizedWords() {
+            const input = document.getElementById('findCapitalizedWordsInput').value;
+            const words = input.match(/\b[A-Z][a-z]*\b/g);
+            document.getElementById('findCapitalizedWordsResult').innerText = words ? words.join(', ') : 'No capitalized words found';
+        }
+
+        function validateDateFormat() {
+            const input = document.getElementById('validateDateFormatInput').value;
+            const isValid = /^\d{4}-\d{2}-\d{2}$/.test(input);
+            document.getElementById('validateDateFormatResult').innerText = isValid ? 'Valid date format' : 'Invalid date format';
+        }
+
+        function findDuplicateWords() {
+            const input = document.getElementById('findDuplicateWordsInput').value;
+            const words = input.toLowerCase().match(/\b\w+\b/g);
+            const wordCounts = words.reduce((acc, word) => {
+                acc[word] = (acc[word] || 0) + 1;
+                return acc;
+            }, {});
+            const duplicates = Object.keys(wordCounts).filter(word => wordCounts[word] > 1);
+            document.getElementById('findDuplicateWordsResult').innerText = duplicates.length ? duplicates.join(', ') : 'No duplicate words found';
+        }
+
+        function extractDomain() {
+            const input = document.getElementById('extractDomainInput').value;
+            const match = input.match(/@(.+)$/);
+            const domain = match ? match[1] : 'Invalid email address';
+            document.getElementById('extractDomainResult').innerText = domain;
+        }
+    </script>
+</body>
+</html>
+

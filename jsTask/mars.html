@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Travel</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #d8c8c8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #415f82;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        h1, p {
+            margin: 0 0 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Space Travel Information</h1>
+        <script>
+
+            const shuttleName = "Determination";
+            const shuttleSpeedMPH = 17500;
+            const distanceToMarsKM = 225000000;
+            const distanceToMoonKM = 384400;
+            const milesPerKilometer = 0.621;
+
+            console.log(typeof shuttleName);
+            console.log(typeof shuttleSpeedMPH);
+            console.log(typeof distanceToMarsKM);
+            console.log(typeof distanceToMoonKM);
+            console.log(typeof milesPerKilometer);
+
+            const milesToMars = distanceToMarsKM * milesPerKilometer;
+            const hoursToMars = milesToMars / shuttleSpeedMPH;
+            const daysToMars = hoursToMars / 24;
+
+        
+            document.write(`<p>${shuttleName} will take ${daysToMars.toFixed(2)} days to reach Mars.</p>`);
+        </script>
+    </div>
+</body>
+</html>

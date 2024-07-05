@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Programs</title>
+  <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  div {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  p {
+    margin-top: 10px;
+  }
+  
+  #result3 {
+    margin-top: 10px;
+  }
+  
+  #result3 p {
+    margin-bottom: 5px;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Programs</h2>
+    <div>
+      <h3>1. Remove Duplicates and Find Most Frequent Item</h3>
+      <label for="inputArray1">Enter array separated by commas:</label>
+      <input type="text" id="inputArray1">
+      <button onclick="removeDuplicatesAndMostFrequent()">Submit</button>
+      <p id="result1"></p>
+    </div>
+    <div>
+      <h3>2. Find Minimum and Maximum Numbers</h3>
+      <label for="inputArray2">Enter array separated by commas:</label>
+      <input type="text" id="inputArray2">
+      <button onclick="findMinMax()">Submit</button>
+      <p id="result2"></p>
+    </div>
+    <div>
+      <h3>3. Create Array from Input and Display Positions</h3>
+      <button onclick="createArrayAndDisplay()">Start entering values</button>
+      <div id="result3"></div>
+    </div>
+  </div>
+  <script>
+    // 1. Remove Duplicates and Find Most Frequent Item
+function removeDuplicatesAndMostFrequent() {
+  const inputArray = document.getElementById('inputArray1').value.split(',').map(item => parseInt(item.trim()));
+  const uniqueValues = Array.from(new Set(inputArray));
+  const countMap = new Map();
+  inputArray.forEach(item => {
+    countMap.set(item, (countMap.get(item) || 0) + 1);
+  });
+  let mostFrequentItem = null;
+  let maxCount = 0;
+  countMap.forEach((count, item) => {
+    if (count > maxCount) {
+      mostFrequentItem = item;
+      maxCount = count;
+    }
+  });
+  document.getElementById('result1').innerText = `Unique values: [${uniqueValues}], most frequent is ${mostFrequentItem}`;
+}
+
+// 2. Find Minimum and Maximum Numbers
+function findMinMax() {
+  const inputArray = document.getElementById('inputArray2').value.split(',').map(item => parseInt(item.trim()));
+  const min = Math.min(...inputArray);
+  const max = Math.max(...inputArray);
+  document.getElementById('result2').innerText = `Minimum number: ${min}, Maximum number: ${max}`;
+}
+
+// 3. Create Array from Input and Display Positions
+function createArrayAndDisplay() {
+  const values = [];
+  while (true) {
+    const value = prompt('Enter a value (press Cancel to finish):');
+    if (value === null) {
+      break;
+    }
+    values.push(value);
+  }
+  const resultDiv = document.getElementById('result3');
+  resultDiv.innerHTML = '<h4>Array:</h4>';
+  values.forEach((value, index) => {
+    const p = document.createElement('p');
+    p.innerText = `Position ${index + 1}: ${value}`;
+    resultDiv.appendChild(p);
+  });
+}
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <title>Book&Rectangle Objects</title>
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+h1, h2 {
+  color: #333;
+}
+
+button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ddd;
+}
+
+    </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Book&Rectangle Objects</h1>
+
+            <div class="book-section">
+                <h2>Book Info</h2>
+                <p id="book-info"></p>
+                <button onclick="readBook()">Read 50 Pages</button>
+                <button onclick=chrckPage()">Check Current Page</button>
+                <button onclick="checkPercentage()">Check Read Percentage</button>
+                <button onclick="checkIsRead()">Is Book Read?</button>
+            </div>
+            <div class="rectangle-section">
+                <h2>Rectangle Info</h2>
+                <p id="rectangle-info"></p>
+                <button onclick="updateRectangle()">Update Rectangle</button>
+            </div>
+            <div class="programming-section">
+                <h2>Programming Object</h2>
+                <p id="programming-info"></p>
+            </div>
+        </div>
+<script>
+const book = {
+    title: "Harry Potter and the Sorcerer's Stone",
+    author: "J.K. Rowling",
+    pages: 300,
+    currentPage: 1,
+  
+    read(numPages) {
+      this.currentPage += numPages;
+      console.log(`Reading ${numPages} pages`);
+    },
+  
+    checkPage() {
+      console.log(`Current page: ${this.currentPage}`);
+    },
+    checkPercentage(){
+        const percentage =(this.currentPage / this.pages) * 100;
+        console.log(`Percentage read: ${perentage.toFixed(2)}%`);
+    },
+    isRead(){
+        return this.currentPage === this.pages;
+    }
+};
+function readBook(){
+    book.read(50);
+    updateBookInfo();
+}
+function checkPage(){
+    book.checkPage();
+}
+function checkPercentage(){
+    book.checkPercentage();
+}
+function checkIsRead(){
+    console.log(book.isRead() ? "The book is read." : "The book is not read yet.");
+}
+function updateBookInfo() {
+    const bookInfo = document.getElementById('book-info');
+    bookInfo.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Current Page: ${book.currentPage}`;
+}
+const rectangle ={
+    _width:0,
+    _height:0,
+
+    get width(){
+        return this._width;
+    },
+    set width(value){
+        if(value >= 0){
+            this._width = value;
+        } else {
+            console.log("Width must be a non-negative value.")
+        }
+    },
+    get height(){
+        return this._height;
+    },
+    set height(value) {
+    if (value >= 0) {
+      this._height = value;
+    } else {
+      console.log("Height must be a non-negative value.");
+    }
+  },
+
+  get perimeter() {
+    return 2 * (this._width + this._height);
+  },
+
+  get area() {
+    return this._width * this._height;
+  }
+};
+
+function updateRectangle() {
+  rectangle.width = 5;
+  rectangle.height = 10;
+  const rectangleInfo = document.getElementById('rectangle-info');
+  rectangleInfo.textContent = `Width: ${rectangle.width}, Height: ${rectangle.height}, Perimeter: ${rectangle.perimeter}, Area: ${rectangle.area}`;
+}
+
+let programming = {
+  languages: ["JavaScript", "Python", "Ruby"],
+  isChallenging: true,
+  isRewarding: true,
+  difficulty: 8,
+  jokes: "http://stackoverflow.com/questions/234075/what-is-your-best-programmer-joke"
+};
+
+programming.languages.push("Go");
+programming.difficulty = 7;
+delete programming.jokes;
+programming.isFun = true;
+
+const programmingInfo = document.getElementById('programming-info');
+programmingInfo.innerHTML = `Languages: ${programming.languages.join(", ")},<br>Is Challenging: ${programming.isChallenging},<br>Is Rewarding: ${programming.isRewarding},<br>Difficulty: ${programming.difficulty},<br>Is Fun: ${programming.isFun}`;
+
+programming.languages.forEach(language => console.log(language));
+
+for (let key in programming) {
+  console.log(key);
+}
+
+for (let key in programming) {
+  console.log(programming[key]);
+}
+
+
+updateBookInfo();
+updateRectangle();
+     </script>
+</body>     
+</html>
