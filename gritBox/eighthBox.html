@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Box8</title>
+
+        <style>
+            body, html {
+            height: 100%;
+            margin: 0;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+        }
+            
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(6, 1fr);
+            grid-column-gap: 5px;
+            grid-row-gap: 5px;
+            width: 1000px;
+            height: 400px;
+            background-color: rgb(73, 72, 72);
+            border-radius: 5px;
+            padding: 10px; 
+        }
+        .div1 { grid-area: 1 / 2 / 2 / 6; }
+        .div2 { grid-area: 2 / 1 / 4 / 2; }
+        .div3 { grid-area: 2 / 2 / 4 / 3; }
+        .div4 { grid-area: 2 / 3 / 4 / 4; }
+        .div5 { grid-area: 2 / 4 / 4 / 5; }
+        .div6 { grid-area: 2 / 5 / 4 / 6; }
+        .div7 { grid-area: 4 / 1 / 6 / 2; }
+        .div8 { grid-area: 4 / 2 / 6 / 3; }
+        .div9 { grid-area: 4 / 3 / 6 / 6; }
+        .div10 { grid-area: 6 / 1 / 7 / 6; }
+
+
+
+           .div1 {
+            background-color: azure;
+            display: grid;
+            justify-items: center; 
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div2 {
+            background-color: rgb(255, 116, 116);
+            display: grid;
+            justify-items: left; 
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div3 {
+            background-color: rgb(233, 189, 93);
+            display: grid;
+            justify-items: left;  
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+
+        .div4 {
+            background-color: rgb(127, 255, 242);
+            display: grid;
+            justify-items: left; 
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div5 {
+            background-color: rgb(23, 142, 105);
+            display: grid;
+            justify-items: left;  
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div6 {
+            background-color: rgb(12, 72, 30);
+            display: grid;
+            justify-items: left; 
+            border: 2px;
+            border-radius: 5px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div7 {
+            background-color: rgb(218, 149, 93);
+            display: grid;
+            justify-items: left; 
+            border-radius: 5px;
+            border: 2px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div8 {
+            background-color: rgb(247, 107, 107);
+            display: grid;
+            justify-items: left;  
+            border: 2px;
+            border-radius: 5px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div9 {
+            background-color: rgb(202, 108, 60);
+            display: grid;
+            justify-items: left;  
+            border: 2px;
+            border-radius: 5px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .div10 {
+            background-color:aquamarine;
+            display: grid;
+            justify-items: left;  
+            border: 2px;
+            border-radius: 5px;
+            margin: 8px;
+            padding: 8px;
+        }
+        .circle1 {
+            grid-area: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: left; 
+            align-items: left; 
+            column-gap: 8px;
+            row-gap: 8px;
+            margin-bottom: 10px; 
+        }
+
+        .circle {
+            margin: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(255, 13, 13);
+            border-radius: 50%;
+            display: grid;
+            justify-content: left;
+            align-items: left;
+        }
+
+        .circle2 {
+            margin: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: orange;
+            border-radius: 50%;
+            display: grid;
+            justify-content: left;
+            align-items: left;
+        }
+
+        .circle3 {
+            margin: 20px;
+            width: 20px;
+            height: 20px;
+            background-color: rgb(16, 218, 83);
+            border-radius: 50%;
+            display: grid;
+            justify-content: left;
+            align-items: left;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="circle1">
+            <div class="circle"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+        </div>
+        <div class="div1"> </div>
+        <div class="div2"> </div>
+        <div class="div3"> </div>
+        <div class="div4"> </div>
+        <div class="div5"> </div>
+        <div class="div6"></div>
+        <div class="div7"> </div>
+        <div class="div8"> </div>
+        <div class="div9"> </div>
+        <div class="div10"> </div>
+      </div>
+</body>
+</html>
